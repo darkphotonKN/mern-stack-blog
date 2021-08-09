@@ -1,0 +1,23 @@
+
+section#admin-pages
+  .post
+    cursor: pointer
+    transition: color 200ms ease-in-out
+
+    .title
+      margin-top: 20px
+      margin-bottom: 15px
+      border-bottom: 1px solid $color-secondary
+
+    span
+      font-weight: 600
+      margin-right: 10px
+
+    &:hover
+      color: $color-hover
+
+      button.edit-btn, button.delete-btn
+        display: block
+
+    p.deleted-post-msg
+      color: $color-red

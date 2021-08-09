@@ -1,0 +1,8 @@
+config.codekit3
+.DS_Store
+node_modules
+.next 
+.DS_Store
+**/.DS_Store
+shoushan-dev
+**.env

@@ -1,0 +1,88 @@
+$admin-area-height: 60vh
+
+.admin-app
+  font-family: $tertiary-font
+  font-size: 1.8rem
+
+  // background: url('../img/bg-faded.jpg')
+  background-color: $colorbackground2
+  background-size: cover
+  background-repeat: no-repeat
+  width: 100%
+  min-height: 100vh
+  padding: 17px
+
+  section#admin-area
+    display: flex
+    flex-direction: row
+
+    .nav-section
+      // display: inline-block
+      width: 190px
+
+      nav ul
+        // border: 1px solid $color-primary
+        padding: 16px
+        background-color: rgba(255, 255, 255, 0.8)
+        // min-height: $admin-area-height
+        border-radius: 4px 0px 0px 4px
+        width: 140px
+
+        li
+          list-style: none
+
+          &.title
+            border-bottom: 1px solid $color-primary
+
+          a
+            color: $font-dark
+            text-decoration: none
+
+            &:hover
+              color: $color-hover
+
+    .bg-overlay
+      // display: inline-block
+      border: 1pox solid $color-primary
+      flex-grow: 2
+      padding: 20px 100px
+      padding-bottom: 40px
+      height: 100%
+      min-height: $admin-area-height
+      // width: 100%
+      border-radius: 0 4px 4px 0
+      background-color: rgba(255, 255, 255, 0.8)
+
+  .admin-bar
+
+    .title
+      a
+        font-size: 2rem
+        color: $font-dark
+
+  .nav-section
+    nav
+      ul
+        font-size: 1.6rem
+        li
+          display: block
+          list-style: none
+          margin-right: 10px
+          a
+            color: $font-dark
+            &:hover
+              color: $color-hover
+
+@media only screen and (max-width: $md-bp)
+
+  .admin-app
+    section#admin-area
+      .bg-overlay
+        padding: 10px 20px
+
+    .nav-section
+      nav
+        ul
+          font-size: 1.4rem
+          li
+            display: inline-block

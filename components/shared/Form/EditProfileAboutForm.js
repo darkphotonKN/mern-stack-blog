@@ -1,0 +1,102 @@
+import Router from 'next/router';
+import { withFormik } from 'formik';
+
+import { postData } from '../../../api/helper';
+
+const EditProfileAboutForm = (props) => {
+  const {
+    // passed down from higher order component
+    values,
+    touched,
+    errors,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+    handleReset,
+    dirty
+  } = props;
+
+  console.log('Edit Form Props:', props);
+  // console.log('Post Data:', postData);
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="form-group">
+        <div className="title">關於我 About</div>
+      </div>
+
+      <div className="form-group">
+        <div className="row input-label-group">
+          <label
+            htmlFor="aboutPost"
+            className="col-12 col-md-2 d-flex align-items-center"
+          >
+            內容
+          </label>
+          <textarea
+            id="aboutPost"
+            name="post"
+            type="text"
+            className="col-md-8"
+            placeholder="輸入.."
+            rows="6"
+            onChange={handleChange}
+            value={values.post}
+          />
+          {/* validation */}
+          {errors.post && touched.post && (
+            <div className="form-validation col-12 col-md-9 mt-4">
+              {errors.post}
+            </div>
+          )}
+        </div>
+      </div>
+      <button type="submit" className="submit-btn ">
+        更新
+      </button>
+    </form>
+  );
+};
+
+const EditProfileAboutFormValidated = withFormik({
+  // Makes values props that holds the form state
+  mapPropsToValues: (props) => {
+    const { data } = props;
+
+    console.log('Edit Profile Data:', data);
+
+    return {
+      post: data.content
+    };
+  },
+
+  // Custom validation
+  validate: (values) => {
+    const errors = {};
+
+    if (!values.post) {
+      errors.post = '必填欄位!';
+    }
+
+    return errors;
+  },
+
+  // Submitting Form
+  handleSubmit: async (values, { props, setSubmitting }) => {
+    console.log('Post Values Before:', values);
+    console.log('And props:', props);
+
+    const { data } = await postData(`/api/profile/about`, {
+      content: values.post
+    });
+
+    console.log('Data after posting:', data);
+
+    Router.push('/admin/profile');
+  },
+
+  displayName: 'BasicForm'
+})(EditProfileAboutForm);
+
+export default EditProfileAboutFormValidated;

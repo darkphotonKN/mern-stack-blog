@@ -1,0 +1,73 @@
+ /* Custom Button Styles */
+
+button
+  cursor: pointer
+  font-family: $tertiary-font
+  position: relative
+
+.blog-btn, .back-btn, .submit-btn
+  padding: 5px 22px
+  font-size: 1.5rem
+  color: $color-secondary
+  transition: all 200ms ease-in-out
+  animation: delayed-fade 1000ms ease-in-out forwards
+  border-radius: 2px
+  background-color: #fff
+
+  &:hover
+    color: $colorbackground2
+    background-color: $color-secondary
+
+  &.admin
+    color: #fff
+    background-color: $color-secondary
+
+    &:hover
+      border: 1px solid $color-secondary
+      background-color: #fff
+      color: $color-secondary
+
+.blog-btn
+  border: 1px solid $color-secondary
+  position: absolute
+  right: 20px
+  bottom: -52px
+
+.back-btn-row
+  margin-top: 100px
+
+.back-btn
+  background-color: rgba(#eee, 1)
+  border: $color-white
+
+.submit-btn
+  padding: 2px 22px
+  color: #fff
+  background-color: $color-secondary
+  transition: all 200ms ease-in-out forwards
+
+  &:hover
+    margin-left: 5px
+    background-color: #fff
+    color: $color-secondary
+
+button.delete-btn
+  background-color: $color-red
+  color: #fff
+
+  &:hover
+    background-color: darken($color-red, 10%)
+
+button.edit-btn
+  background-color: $color-hover
+  color: $color-primary
+
+  &:hover
+    background-color: darken($color-hover, 10%)
+
+button.delete-btn, button.edit-btn
+  border-radius: 4px
+  padding: 4px 12px
+  animation: fade-up 300ms ease-in-out forwards
+  display: none
+  transition: all 200ms ease-in-out

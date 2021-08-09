@@ -1,0 +1,43 @@
+
+.nav-bar
+  // border-top: 1px solid #aaa
+  // border-bottom: 1px solid #aaa
+  padding: 10px 0px
+  background-color: rgba($color-background, 0.88)
+  // animation: nav-fade-in 800ms ease-in-out forwards
+
+  // push content down
+  margin-bottom: 40px
+
+  .nav-date
+    font-size: 1.3rem
+    font-weight: 500
+    font-family: $tertiary-font
+    color: $color-white
+
+nav.main-nav
+  // border-top: 1px solid #aaa
+  // border-bottom: 1px solid #aaa
+
+  ul.nav-list
+    font-size: 1.85rem
+    font-weight: 600
+    font-family: $tertiary-font, cursive
+    margin: 0
+    // animation: delayed-fade 800ms ease-in-out forwards
+
+    li.list-item
+      display: inline-block
+      list-style: none
+      margin-right: 30px
+
+      a
+        text-decoration: none
+        color: #444
+        transition: 200ms ease-in
+
+        &.active
+          color: $color-hover-nav
+
+        &:hover
+          color: $color-hover-nav

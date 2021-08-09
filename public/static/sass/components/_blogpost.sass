@@ -1,0 +1,35 @@
+
+.blog-post-list
+
+  &:nth-child(1)
+    margin-top: 20px
+
+.blog-post, .blog-post-full
+  animation: fade-up 800ms ease-in-out forwards
+  margin-bottom: 80px
+  font-size: 1.6rem
+
+.blog-post-full
+  font-size: 1.8rem
+
+  .blog-date
+    font-size: 1.4rem
+    font-weight: 400
+    font-style: italic
+
+  .blog-title
+    font-size: 1.8rem
+    font-weight: 500
+
+  a
+    text-decoration: none
+    color: $color-secondary
+    transition: all 200ms ease-in-out
+
+    &:hover
+      color: $color-hover
+
+.blog-post-full
+  padding: 0 60px
+  border-left: 1px solid #ddd
+  border-right: 1px solid #ddd
